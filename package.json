@@ -4,11 +4,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "push": "git add . && git commit -m  'setup langchain' && git push origin master",
+    "setup": "npm install",
+    "dev": "NODE_ENV=remote NODE_OPTIONS=--experimental-specifier-resolution=node nodemon --exec ts-node --esm simplechain/output_parser.ts  --trace-warnings"
   },
+  "type": "module",
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@tsconfig/node18": "^18.2.2",
+    "dotenv": "^16.4.4",
     "langchain": "^0.1.18"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3",
+    "ts-node": "^10.9.2"
   }
 }
